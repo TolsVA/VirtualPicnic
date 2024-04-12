@@ -1,7 +1,7 @@
 package org.example.model.presenter.impl;
 
 import org.example.bd.WorksWithDatabase;
-import org.example.model.command.Command;
+import org.example.model.command.CommandsEnum;
 import org.example.model.exception.FileListIsEmptyException;
 import org.example.model.exception.FileNotCreatedException;
 import org.example.model.exception.MyIsEmptyCollectionException;
@@ -50,7 +50,7 @@ public class Presenter implements Presentable {
         String fileName = getFileName();
         String text = prompt("Введите текст: ");
 
-        List<String> list = Arrays.stream(Command.values())
+        List<String> list = Arrays.stream(CommandsEnum.values())
                 .map(c -> c + " -> (" + c.getTranslation() + ")")
                 .toList();
 
@@ -59,7 +59,7 @@ public class Presenter implements Presentable {
             view.print("Такой команды нет!!!\nСписок команд: -> " + list);
             command = prompt("Введите команду: ").toUpperCase();
         }
-        Command com = Command.valueOf(command);
+        CommandsEnum com = CommandsEnum.valueOf(command);
 
         try {
             database.writeFile(fileName, text, com.getRecordingMode());
@@ -86,10 +86,10 @@ public class Presenter implements Presentable {
     }
 
 
-    private boolean isContainsCommand(String command) {
-        Command[] values = Command.values();
-        for (Command value : values) {
-            if (value.toString().equals(command)) {
+    private boolean isContainsCommand(String commandName) {
+        CommandsEnum[] commands= CommandsEnum.values();
+        for (CommandsEnum command : commands) {
+            if (command.toString().equals(commandName)) {
                 return true;
             }
         }
@@ -139,7 +139,7 @@ public class Presenter implements Presentable {
 
     private void fullMapFruits(){
         if (listFruits.isEmpty())
-            throw new MyIsEmptyCollectionException("Эта колекция пустая");
+            throw new MyIsEmptyCollectionException("Эта коллекция пустая");
         for (String listFruit : listFruits) {
             String fruitName = listFruit.trim();
             if (!fruitName.isEmpty()) {
@@ -177,7 +177,7 @@ public class Presenter implements Presentable {
                 String.format(
                         "Самое длинное название фрукта(ов): %s имеет %d символов%n",
                         nameFruits,
-                        nameFruits.getFirst().length()
+                        nameFruits.get(0).length()
                 )
         );
     }

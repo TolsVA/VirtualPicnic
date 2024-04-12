@@ -12,7 +12,7 @@ public class Database implements WorksWithDatabase {
     private static final String DIR = "db_input";
     @Override
     public String readAll(String fileName) throws IOException {
-        String path = "%s\\%s".formatted(DIR, fileName);
+        String path = "%s/%s".formatted(DIR, fileName);
         StringBuilder sb = new StringBuilder();
             File file = new File(path);
             try(
@@ -50,7 +50,7 @@ public class Database implements WorksWithDatabase {
 
     @Override
     public void writeFile(String fileName, String text, boolean recordingMode) throws FileNotCreatedException {
-        String path = "%s\\%s".formatted(DIR, fileName);
+        String path = "%s/%s".formatted(DIR, fileName);
         try (FileWriter fw = new FileWriter(path, recordingMode)){
             fw.write(text + " ");
             fw.flush();
