@@ -9,4 +9,5 @@ public interface Presentable {
     void writeFile();
     void createFile();
     void setIndex(int index);
+    void maxEntry();
 }

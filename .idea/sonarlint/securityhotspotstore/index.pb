@@ -138,3 +138,7 @@ G.idea/sonarlint/issuestore/1/d/1d3370d9947ea7f3b3c2e4ca2473d877104921ed,3\0\30
 Q.idea/sonarlint/securityhotspotstore/e/7/e77d05edf4f32847cbc1349372557142da310780,2\7\2773ab9689041a21c4e70c772e0ef086e6ed6b37
 Å
 Q.idea/sonarlint/securityhotspotstore/0/c/0c70424691a009004b01a9daa4429ce96a2c4437,7\8\7886e542d8da51fb73aa2e0122cebdbf45c6b51d
+p
+@src/main/java/org/example/model/command/impl/MostCommonWord.java,a\b\aba3b01e5f5d4c7cecccf1dbd8a4a570cf2f5fd9
+i
+9src/main/java/org/example/model/command/CommandsEnum.java,e\7\e7f1ee36b22335c97f85aaa62a1427debea2700b

@@ -28,20 +28,20 @@ public class App {
     }
 
     private List<List<Commands>> initCommands() {
-        Commands read = new Read();
-        Commands write = new Write();
-        Commands newFile = new NewFile();
         Commands exit = new Exit();
-
-        Commands longestWord = new LongestWord();
-        Commands quantityByName = new WordFrequency();
-        Commands wordCount = new WordCount();
-        Commands mainMenu = new MainMenu();
-
         List<List<Commands>> commands = new ArrayList<>();
-        commands.add(new ArrayList<>(List.of(read, write, newFile, exit)));
-        commands.add(new ArrayList<>(List.of(longestWord, quantityByName, wordCount, mainMenu, exit)));
-
+        commands.add(new ArrayList<>(List.of(new Read(), new Write(), new NewFile(), exit)));
+        
+        commands.add(new ArrayList<>(
+                List.of(
+                        new LongestWord(),
+                        new WordFrequency(),
+                        new WordCount(),
+                        new MostCommonWord(),
+                        new MainMenu(),
+                        exit
+                )
+        ));
         return commands;
     }
 }

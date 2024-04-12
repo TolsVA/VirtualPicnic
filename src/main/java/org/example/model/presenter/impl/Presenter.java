@@ -85,6 +85,11 @@ public class Presenter implements Presentable {
         view.setIndex(index);
     }
 
+    @Override
+    public void maxEntry() {
+        Map.Entry<String, Integer> maxEntry = Collections.max(mapFruits.entrySet(), Map.Entry.comparingByValue());
+        view.print(String.format("%s: самое большое количество фруктов: %d", maxEntry.getKey(), maxEntry.getValue()));
+    }
 
     private boolean isContainsCommand(String commandName) {
         CommandsEnum[] commands= CommandsEnum.values();

@@ -58,19 +58,6 @@ public class View implements Printable {
         return false;
     }
 
-//        Map<String, Integer> mapFruits = presenter.getMapFruits(listFruits);
-//        System.out.println(mapFruits);
-//        Map.Entry<String, Integer> maxEntry = Collections.max(mapFruits.entrySet(), Map.Entry.comparingByValue());
-//        for (var entry : mapFruits.entrySet()) {
-//            System.out.println(entry);
-//        }
-//        System.out.printf("%s: самое большое количество фруктов: %d%n", maxEntry.getKey(), maxEntry.getValue());
-//
-//
-//        System.out.println("Общее количество слов: " + presenter.getFruitCounter());
-//        System.out.println("Количество наименований фруктов: " + mapFruits.size());
-
-
     @Override
     public void print(String message) {
         System.out.println(message);
